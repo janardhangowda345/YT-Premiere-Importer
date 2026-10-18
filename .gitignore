@@ -1,0 +1,18 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+
+# Environment
+.env
+
+# Development runner wrappers
+powershell.cmd
+powershell.bat
+
+# OS files
+.DS_Store
+Thumbs.db

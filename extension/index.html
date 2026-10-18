@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YT Importer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="panel-container">
+    <!-- Panel Header -->
+    <header class="panel-header">
+      <div class="header-top-row">
+        <h1 class="panel-title">YT IMPORTER</h1>
+        <span class="badge">UXP</span>
+      </div>
+      <p class="panel-subtitle">Download and import YouTube videos into Premiere Pro.</p>
+    </header>
+
+    <!-- Main Content Form -->
+    <main class="panel-content">
+      <!-- SECTION 1: YouTube URL -->
+      <section class="form-section">
+        <label for="url-input" class="section-label">YouTube URL</label>
+        <div class="input-wrapper">
+          <input 
+            type="text" 
+            id="url-input" 
+            class="text-input" 
+            placeholder="Paste YouTube URL..." 
+            spellcheck="false" 
+            autocomplete="off"
+          />
+        </div>
+      </section>
+
+      <!-- SECTION 2: Video Quality -->
+      <section class="form-section">
+        <label for="quality-select" class="section-label">Video Quality</label>
+        <div class="select-wrapper">
+          <select id="quality-select" class="select-input">
+            <option value="best">Best Available</option>
+            <option value="2160">2160p (4K)</option>
+            <option value="1440">1440p</option>
+            <option value="1080" selected="selected">1080p</option>
+            <option value="720">720p</option>
+            <option value="480">480p</option>
+            <option value="360">360p</option>
+          </select>
+        </div>
+      </section>
+
+      <!-- SECTION 3: Save Location -->
+      <section class="form-section">
+        <label for="save-location-input" class="section-label">Save Location</label>
+        <div class="location-group">
+          <input 
+            type="text" 
+            id="save-location-input" 
+            class="text-input location-input" 
+            value="D:\YT-Premiere-Downloads" 
+            spellcheck="false"
+          />
+          <button type="button" id="browse-btn" class="btn btn-secondary browse-btn" title="Browse for download destination">
+            Browse...
+          </button>
+        </div>
+      </section>
+
+      <!-- SECTION 4: Action Button -->
+      <section class="action-section">
+        <button type="button" id="download-btn" class="btn btn-primary action-btn">
+          DOWNLOAD & IMPORT
+        </button>
+      </section>
+
+      <!-- SECTION 5: Status Area -->
+      <section class="status-section">
+        <div class="status-box" id="status-box">
+          <div class="status-header">
+            <span class="status-title">Status</span>
+            <div class="status-badge-group">
+              <span class="status-dot status-dot-ready" id="status-dot"></span>
+              <span class="status-state-text" id="status-state">Ready</span>
+            </div>
+          </div>
+          <p class="status-message" id="status-message">Waiting for URL input...</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
